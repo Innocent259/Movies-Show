@@ -1,3 +1,39 @@
-.hello {
-    color: red;
-  }
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111010;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-movie {
+  display: flex;
+  gap: 2rem;
+}
+.img-logo {
+  height: 4rem;
+  width: 4rem;
+}
+
+li {
+  list-style: none;
+}
+
+.links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer {
+  height: 3rem;
+  position: fixed;
+}
