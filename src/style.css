@@ -23,6 +23,7 @@ body {
   gap: 4rem;
   align-items: center;
 }
+
 .img-logo {
   height: 4rem;
   width: 4rem;
@@ -43,6 +44,7 @@ li {
   grid-row-gap: 1.5rem;
   padding: 2rem 5rem;
 }
+
 .likeBtn {
   width: 24px;
   height: 24px;
