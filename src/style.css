@@ -1,3 +1,18 @@
-.hello {
-    color: red;
-  }
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nav {
+  display: flex;
+}
+
+.img-logo {
+  height: 4rem;
+  width: 4rem;
+}
+
+li {
+  list-style: none;
+}
