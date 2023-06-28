@@ -13,12 +13,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 3rem 5rem;
+  background-color: #1d1c1c;
+  height: 5rem;
 }
 
 .logo-movie {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
+  align-items: center;
 }
+
 .img-logo {
   height: 4rem;
   width: 4rem;
@@ -33,7 +38,22 @@ li {
   gap: 0.5rem;
 }
 
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row-gap: 1.5rem;
+  padding: 2rem 5rem;
+}
+
+.likeBtn {
+  width: 24px;
+  height: 24px;
+}
+
 .footer {
   height: 3rem;
-  position: fixed;
+  background-color: #1d1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
