@@ -50,6 +50,57 @@ li {
   height: 24px;
 }
 
+.popup {
+  background-color: #1d1c1c;
+  padding: 3rem;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.popup-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-cancelbtn {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.id-image {
+  width: 90%;
+  height: 50vh;
+}
+
+.cancel-img {
+  width: 40px;
+  height: 40px; 
+  background-color: rgb(231, 54, 54);
+}
+
+.sub-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: flex-start;
+}
+
 .footer {
   height: 3rem;
   background-color: #1d1c1c;
