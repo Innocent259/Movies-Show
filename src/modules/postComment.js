@@ -1,19 +1,13 @@
-import { baseUrl, commentId } from './commentApi.js';
+import { baseUrl, commentId } from './api.js';
 
-const postComment = async () => {
-  const res = await fetch(`${baseUrl}/apps/${commentId}/comments`, {
+const postComment = async (commentData) => {
+  await fetch(`${baseUrl}/apps/${commentId}/comments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      item_id: 'item',
-      username: 'userName',
-      comment: 'message',
-    }),
+    body: JSON.stringify(commentData),
   });
-  const data = await res.json();
-  return data;
 };
 
 export default postComment;
