@@ -2,6 +2,7 @@ import like from '../assets/like.jpeg';
 import cancel from '../assets/xmark-solid.svg';
 import getComment from './getComments.js';
 import postComment from './postComment.js';
+import { getLikes, postLikes } from './likes.js';
 
 const fetchMovies = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
@@ -20,10 +21,36 @@ const fetchMovies = async () => {
         </div>
         <div class="likeCounter">
           <img class="likeImg likeBtn" src="${like}" alt="like logo"/> 
+          <p class="likes">Likes(<span class="likeCount">0</span>)</p>
         </div>
       </div>
       <button class="commentBtn">Comments</button>
     `;
+    const likeButton = listContainer.querySelector('.likeBtn');
+    likeButton.addEventListener('click', async () => {
+      const likeCountElement = listContainer.querySelector('.likeCount');
+      let likeCount = parseInt(likeCountElement.textContent, 10);
+
+      // Increase the like count by 1
+      likeCount += 1;
+
+      // Send the updated like count to the API
+      await postLikes({ item_id: show.id });
+
+      // Update the like count displayed on the page
+      likeCountElement.textContent = likeCount;
+    });
+    const updateLikeCount = async () => {
+      const likes = await getLikes();
+      const likeCountElements = document.querySelectorAll('.likeCount');
+      likeCountElements.forEach((element) => {
+        element.textContent = likes.length;
+      });
+    };
+
+    // Call the function to initially display the like counts
+    updateLikeCount();
+
     const commentButton = listContainer.querySelector('.commentBtn');
     commentButton.addEventListener('click', async () => {
       const popup = document.createElement('div');
