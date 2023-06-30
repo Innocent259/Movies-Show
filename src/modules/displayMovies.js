@@ -2,17 +2,6 @@ import like from '../assets/like.jpeg';
 import cancel from '../assets/xmark-solid.svg';
 import getComment from './getComments.js';
 import postComment from './postComment.js';
-import { getLikes, postLikes } from './likes.js';
-
-const updateLikeCount = async () => {
-  const likes = await getLikes();
-  const likeCountElements = document.querySelectorAll('.likeCount');
-  likeCountElements.forEach((element) => {
-    const itemId = element.getAttribute('data-item-id');
-    const itemLikes = likes.filter((like) => like.item_id === itemId);
-    element.textContent = itemLikes.length;
-  });
-};
 
 const fetchMovies = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
@@ -30,38 +19,19 @@ const fetchMovies = async () => {
           ${show.name}
         </div>
         <div class="likeCounter">
-          <img class="likeImg likeBtn" src="${like}" alt="like logo"/> 
-          <p class="likes">Likes(<span class="likeCount">0</span>)</p>
+          <img class="likeImg likeBtn" src="${like}" alt="imgf"/> 
+          <p><span class="likesCounter-${show.id}"></span> likes</p>
         </div>
       </div>
       <button class="commentBtn">Comments</button>
     `;
-    const likeButton = listContainer.querySelector('.likeBtn');
-    likeButton.addEventListener('click', async () => {
-      const likeCountElement = listContainer.querySelector('.likeCount');
-      let likeCount = parseInt(likeCountElement.textContent, 10);
-
-      // Increase the like count by 1
-      likeCount += 1;
-
-      // Send the item_id to the postLikes function
-      const itemId = show.id;
-      await postLikes({ item_id: itemId });
-
-      // Update the like count displayed on the page
-      likeCountElement.textContent = likeCount;
-
-      // Update the like count for all movies
-      updateLikeCount();
-    });
-
     const commentButton = listContainer.querySelector('.commentBtn');
     commentButton.addEventListener('click', async () => {
       const popup = document.createElement('div');
       popup.className = 'popup';
       const comments = await getComment(show.id);
       const commentCount = comments.length;
-      const commentsHTML = Array.isArray(comments) ? comments.map((comment) => `<ul>${comment.username}: ${comment.comment}</ul>`).join('') : '';
+      const commentsHTML = Array.isArray(comments) ? comments.map((comment) => `<li>${comment.username}: ${comment.comment}</li>`).join('') : '';
 
       const commentCountText = commentCount > 0 ? `Comments(<span class="commentCount">${commentCount}</span>)` : 'Comments(<span class="commentCount">0</span>)';
 
@@ -77,7 +47,7 @@ const fetchMovies = async () => {
           </span>
           <span class="right-side">
             <p class="comments">${commentCountText}</p>
-            <div class="comment-list">${commentsHTML}</div>
+            <ul class="comment-list">${commentsHTML}</ul>
             <h2 class="comment-title">Add Comment</h2>
             <form class="form">
               <input type="text" id="usernameInput" placeholder="Username">
@@ -90,7 +60,7 @@ const fetchMovies = async () => {
       `;
 
       const commentCountElement = popup.querySelector('.commentCount');
-      const commentsContainer = popup.querySelector('.comments');
+      const commentsContainer = popup.querySelector('.comment-list');
 
       const cancelButton = popup.querySelector('.cancel-img');
       cancelButton.addEventListener('click', () => {
@@ -114,16 +84,15 @@ const fetchMovies = async () => {
         });
         const updatedComments = await getComment(show.id);
         const updatedCommentCount = updatedComments.length;
-        const updatedCommentsHTML = Array.isArray(updatedComments) ? updatedComments.map((comment) => `<ul>${comment.username}: ${comment.comment}</ul>`).join('') : '';
-
-        const updatedCommentCountText = updatedCommentCount > 0 ? `Comments(<span class="commentCount">${updatedCommentCount}</span>)` : 'Comments(<span class="commentCount">0</span>)';
-
-        commentsContainer.innerHTML = `
-          ${updatedCommentCountText}
-          ${updatedCommentsHTML}
-        `;
 
         commentCountElement.textContent = updatedCommentCount;
+
+        commentsContainer.innerHTML = '';
+        updatedComments.forEach((comment) => {
+          const commentItem = document.createElement('li');
+          commentItem.textContent = `${comment.username}: ${comment.comment}`;
+          commentsContainer.appendChild(commentItem);
+        });
 
         usernameInput.value = '';
         commentInput.value = '';

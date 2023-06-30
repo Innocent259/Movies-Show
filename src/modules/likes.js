@@ -16,7 +16,7 @@ export const getLikes = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Error fetching comments:', error);
-    return [];
+    error('Error fetching likes:', error);
+    throw error;
   }
 };
