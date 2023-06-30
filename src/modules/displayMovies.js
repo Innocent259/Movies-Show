@@ -1,54 +1,7 @@
-import { baseUrl, likesId } from './api.js';
 import like from '../assets/like.jpeg';
 import cancel from '../assets/xmark-solid.svg';
 import getComment from './getComments.js';
 import postComment from './postComment.js';
-
-const involvementApiForLikes = `${baseUrl}/apps/${likesId}/likes`;
-const fetchLikes = async () => {
-  try {
-    const response = await fetch(involvementApiForLikes);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching likes:', error);
-    throw error;
-  }
-};
-
-const likeItem = async (id) => {
-  const likeBtn = document.querySelectorAll(`#show-${id} .likeBtn`)[0];
-  const likeCount = document.querySelectorAll(`#show-${id} .likesCounter-${id}`)[0];
-
-  if (likeBtn && likeCount) {
-    likeBtn.addEventListener('click', async () => {
-      likeCount.textContent = parseInt(likeCount.textContent, 10) + 1;
-
-      const res = await fetch(involvementApiForLikes, {
-        method: 'POST',
-        body: JSON.stringify({
-          item_id: id,
-        }),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      });
-
-      const data = await res.text();
-      return data;
-    });
-  }
-};
-
-const displayLikes = async () => {
-  const likes = await fetchLikes();
-  likes.forEach((like) => {
-    const likeCount = document.querySelectorAll(`.likesCounter-${like.item_id}`);
-    likeCount.forEach((span) => {
-      span.textContent = like.likes || 0; // initialize to 0 if like.likes is falsy
-    });
-  });
-};
 
 const fetchMovies = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
@@ -64,10 +17,10 @@ const fetchMovies = async () => {
       <div class="listLikeGroup">
         <div class="elementName">
           ${show.name}
-        </div> <div class="likeCounter">
+        </div>
+        <div class="likeCounter">
           <img class="likeImg likeBtn" src="${like}" alt="imgf"/> 
           <p><span class="likesCounter-${show.id}"></span> likes</p>
-        </div>
         </div>
       </div>
       <button class="commentBtn">Comments</button>
@@ -132,13 +85,9 @@ const fetchMovies = async () => {
         const updatedComments = await getComment(show.id);
         const updatedCommentCount = updatedComments.length;
 
-        // Update the comment count
         commentCountElement.textContent = updatedCommentCount;
 
-        // Clear the existing comments
         commentsContainer.innerHTML = '';
-
-        // Add the updated comments
         updatedComments.forEach((comment) => {
           const commentItem = document.createElement('li');
           commentItem.textContent = `${comment.username}: ${comment.comment}`;
@@ -150,9 +99,7 @@ const fetchMovies = async () => {
       });
     });
     moviesContainer.appendChild(listContainer);
-    likeItem(show.id);
   });
-  displayLikes();
 };
 
 export default fetchMovies;
