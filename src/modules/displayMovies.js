@@ -67,25 +67,25 @@ const fetchMovies = async () => {
 
       popup.innerHTML = `
         <div class="popup-container">
-          <div class="image-cancelbtn">
+          <span class="left-side">
             <img src="${show.image.original}" class="id-image">
-            <img src="${cancel}" class="cancel-img">
-          </div>
-          <h2 class="movie">${show.name}</h2>
-          <span class="sub-details">
-            <p>Release date: ${show.premiered}</p>
-            <a href="${show.officialSite}">Watch Movie</a>
+            <h2 class="movie">${show.name}</h2>
+            <span class="sub-details">
+              <p>Release date: ${show.premiered}</p>
+              <button class="more"><a class="more-link" href="${show.officialSite}">Watch it</a></button>
+            </span>
           </span>
-          <div class="comment-container">
+          <span class="right-side">
             <p class="comments">${commentCountText}</p>
-            ${commentsHTML}
+            <div class="comment-list">${commentsHTML}</div>
             <h2 class="comment-title">Add Comment</h2>
             <form class="form">
               <input type="text" id="usernameInput" placeholder="Username">
               <textarea id="commentInput" placeholder="Your insight"></textarea>
               <button type="submit" class="submit-btn">Comment</button>
             </form>
-          </div>
+          </span>
+          <img src="${cancel}" class="cancel-img">
         </div>
       `;
 
