@@ -28,6 +28,12 @@ body {
   height: 4rem;
   width: 4rem;
 }
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
 
 li {
   list-style: none;
@@ -64,7 +70,6 @@ li {
   justify-content: space-between;
   width: 80%;
   margin-inline: auto;
-  border: 1px solid #ddd;
   text-align: center;
 }
 
@@ -111,7 +116,7 @@ li {
 }
 
 .submit-btn,
-.more {
+.more, .commentBtn {
   padding: 10px;
   border-radius: 8px;
   background: #105b99;
@@ -119,10 +124,16 @@ li {
   font-weight: bold;
 }
 
-.more-link {
-  color: #fff;
-  outline: none;
+.commentBtn {
+  background: none;
+  width: 80%;
+  margin: auto;
 }
+.more-link, .link-list {
+  color: #fff;
+  text-decoration: none;
+}
+
 
 .id-image {
   width: 90%;
