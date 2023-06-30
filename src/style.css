@@ -28,6 +28,7 @@ body {
   height: 4rem;
   width: 4rem;
 }
+
 .list-container {
   display: flex;
   flex-direction: column;
@@ -116,7 +117,8 @@ li {
 }
 
 .submit-btn,
-.more, .commentBtn {
+.more,
+.commentBtn {
   padding: 10px;
   border-radius: 8px;
   background: #105b99;
@@ -129,11 +131,12 @@ li {
   width: 80%;
   margin: auto;
 }
-.more-link, .link-list {
+
+.more-link,
+.link-list {
   color: #fff;
   text-decoration: none;
 }
-
 
 .id-image {
   width: 90%;
