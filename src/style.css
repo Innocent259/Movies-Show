@@ -61,20 +61,72 @@ li {
 .popup-container {
   margin-top: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-inline: auto;
+  border: 1px solid #ddd;
+  text-align: center;
 }
 
-.image-cancelbtn {
+.left-side {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40%;
+  text-align: left;
+}
+
+.comments,
+.comment-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.comments {
+  margin-top: 1rem;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  max-height: 30vh;
+  overflow-y: scroll;
+}
+
+#usernameInput {
+  outline: none;
+  height: 2rem;
+}
+
+#commentInput {
+  outline: none;
+}
+
+.submit-btn,
+.more {
+  padding: 10px;
+  border-radius: 8px;
+  background: #105b99;
+  color: #fff;
+  font-weight: bold;
+}
+
+.more-link {
+  color: #fff;
+  outline: none;
 }
 
 .id-image {
   width: 90%;
-  height: 50vh;
+  height: 70vh;
 }
 
 .cancel-img {
@@ -86,12 +138,7 @@ li {
 .sub-details {
   display: flex;
   justify-content: space-between;
-}
-
-.comment-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  align-items: center;
 }
 
 .form {
