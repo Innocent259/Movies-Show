@@ -1,6 +1,8 @@
 import { baseUrl, likesId } from './api.js';
 
-export const postLikes = async (data) => {
+export const involvementApiForLikes = `${baseUrl}/apps/${likesId}/likes`;
+
+const postLikes = async (data) => {
   await fetch(`${baseUrl}/apps/${likesId}/likes`, {
     method: 'POST',
     headers: {
@@ -10,7 +12,7 @@ export const postLikes = async (data) => {
   });
 };
 
-export const getLikes = async () => {
+const getLikes = async () => {
   try {
     const response = await fetch(`${baseUrl}/apps/${likesId}/likes`);
     const data = await response.json();
@@ -20,3 +22,27 @@ export const getLikes = async () => {
     throw error;
   }
 };
+const displayLikes = async () => {
+  const likes = await getLikes();
+  likes.forEach((like) => {
+    const likeCount = document.querySelectorAll(`.likesCounter-${like.item_id}`);
+    likeCount.forEach((span) => {
+      span.textContent = like.likes || 0;
+    });
+  });
+};
+const likeItem = async (id) => {
+  const likeBtn = document.querySelectorAll(`#show-${id}`);
+  const likeCount = document.querySelector(`.likesCounter-${id}`);
+  likeBtn.forEach((item) => {
+    if (item && likeCount) {
+      item.addEventListener('click', async () => {
+        likeCount.textContent = parseInt(likeCount.textContent, 10) + 1;
+        await postLikes({
+          item_id: id,
+        });
+      });
+    }
+  });
+};
+export { displayLikes, likeItem };

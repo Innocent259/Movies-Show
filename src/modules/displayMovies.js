@@ -2,6 +2,7 @@ import like from '../assets/like.jpeg';
 import cancel from '../assets/xmark-solid.svg';
 import getComment from './getComments.js';
 import postComment from './postComment.js';
+import { displayLikes, likeItem } from './likes.js';
 
 const fetchMovies = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
@@ -19,8 +20,8 @@ const fetchMovies = async () => {
           ${show.name}
         </div>
         <div class="likeCounter">
-          <img class="likeImg likeBtn" src="${like}" alt="imgf"/> 
-          <p><span class="likesCounter-${show.id}"></span> likes</p>
+          <img id="show-${show.id}" class="likeImg likeBtn" src="${like}" alt="imgf"/> 
+          <p><span class="likesCounter-${show.id}"></span>likes</p>
         </div>
       </div>
       <button class="commentBtn">Comments</button>
@@ -99,6 +100,8 @@ const fetchMovies = async () => {
       });
     });
     moviesContainer.appendChild(listContainer);
+    likeItem(show.id);
+    displayLikes();
   });
 };
 
