@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111010;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 5rem;
+  background-color: #1d1c1c;
+  height: 5rem;
+}
+
+.logo-movie {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.img-logo {
+  height: 4rem;
+  width: 4rem;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+.links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1.5rem;
+  padding: 2rem 5rem;
+}
+
+.likeBtn {
+  width: 24px;
+  height: 24px;
+}
+
+.popup {
+  background-color: #1d1c1c;
+  padding: 3rem;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.popup-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40%;
+  text-align: left;
+}
+
+.comments,
+.comment-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.comments {
+  margin-top: 1rem;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  max-height: 30vh;
+  overflow-y: scroll;
+}
+
+#usernameInput {
+  outline: none;
+  height: 2rem;
+}
+
+#commentInput {
+  outline: none;
+}
+
+.submit-btn,
+.more,
+.commentBtn {
+  padding: 10px;
+  border-radius: 8px;
+  background: #105b99;
+  color: #fff;
+  font-weight: bold;
+}
+
+.commentBtn {
+  background: none;
+  width: 80%;
+  margin: auto;
+}
+
+.more-link,
+.link-list {
+  color: #fff;
+  text-decoration: none;
+}
+
+.id-image {
+  width: 90%;
+  height: 70vh;
+}
+
+.cancel-img {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(231, 54, 54);
+}
+
+.sub-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: flex-start;
+}
+
+.footer {
+  height: 3rem;
+  background-color: #1d1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
