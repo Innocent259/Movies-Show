@@ -1,7 +1,5 @@
 <a name="readme-top"></a>
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -81,7 +79,7 @@
 
 ## 🚀 Presentation <a name="zoom-video"></a>
 
-- [Presentation](https://innocent259.github.io/Javascript-capstone/dist/)
+- [Presentation](https://drive.google.com/file/d/1CLV070eZLypoUGxrpNMM6OShJ2aZKdFI/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
