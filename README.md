@@ -1,7 +1,5 @@
 <a name="readme-top"></a>
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -9,6 +7,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [🚀 Presentation](#zoom-video)
   - [🦻 Walkthrough  Video](#walkthrough-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -25,7 +24,6 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
 
 # 📖 Javascript-capstone <a name="about-project"></a>
 
@@ -59,8 +57,6 @@
   </ul>
 </details>
 
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
 - **Follow HTML and CSS best practice**
@@ -74,23 +70,20 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Comming Soon...
+- [Live Demo Link](https://innocent259.github.io/Javascript-capstone/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- WalkThrough Video -->
+## 🚀 Presentation <a name="zoom-video"></a>
 
-## 🦻 WalkThrough Video <a name="#walkthrough-demo"></a>
-
--  Comming Soon...
+- [Presentation](https://drive.google.com/file/d/1CLV070eZLypoUGxrpNMM6OShJ2aZKdFI/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -106,16 +99,14 @@ In order to run this project you need:
 
 ### Setup
 
-Clone this repository to your desired folder:
-Use git clone command or download ZIP folder
+Clone this repository to your desired folder: https://github.com/Innocent259/Javascript-capstone
+
+Change directory to: Javascript-capstone
+
 ### Install
 Install this project with:
-npm
-Example command:
-```sh
-  cd my-project
-  npm init -y
-```
+npm install t save all project dependencies
+
 ### Usage
 To run the project, execute the following command:
 npm start or live server
@@ -151,31 +142,29 @@ git@github.com:Yinka/Sharing-World.git
 - GitHub: [@Innocent259](https://github.com/Innocent259)
 - LinkedIn: [Innocent NDAHIMANA](https://www.linkedin.com/in/innocent259/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- FUTURE FEATURES -->
+
 
 ## :telescope: Future Features <a name="future-features"></a><br/>
 - [ ] **Adding BackEnd**<br/>
 - [ ] **Making it stylish**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- CONTRIBUTING -->
 
 ## :handshake: Contributing <a name="contributing"></a>
 Contributions, issues, and feature requests are welcome!<br/>
 Feel free to check the [https://github.com/yin-ka/To-Do-list/issues](../../issues/).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- SUPPORT -->
+
 
 ## :star:️ Show your support <a name="support"></a>
 If you like this project please follow me on github & twitter and also connect on Linkedin.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- ACKNOWLEDGEMENTS -->
 
 ## :pray: Acknowledgments <a name="acknowledgements"></a>
 - I would like to thank Microverse for this exercise. <br>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- FAQ (optional) -->
+
 
 ## :question: FAQ (OPTIONAL) <a name="faq"></a><br/>
 - **How long can it take to build that project**
@@ -186,8 +175,10 @@ If you like this project please follow me on github & twitter and also connect o
 
   - Figma is not available for now!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- LICENSE -->
+
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/Innocent259/Javascript-capstone/blob/Dev/MIT.md) licensed.
+This project is [MIT](MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>.
