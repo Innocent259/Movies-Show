@@ -21,7 +21,7 @@ const fetchMovies = async () => {
         </div>
         <div class="likeCounter">
           <img id="show-${show.id}" class="likeImg likeBtn" src="${like}" alt="imgf"/> 
-          <p><span class="likesCounter-${show.id}"></span> likes</p>
+          <p><span class="likesCounter-${show.id}"></span>likes</p>
         </div>
       </div>
       <button class="commentBtn">Comments</button>

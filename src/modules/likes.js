@@ -32,15 +32,17 @@ const displayLikes = async () => {
   });
 };
 const likeItem = async (id) => {
-  const likeBtn = document.querySelector(`#show-${id} .likeBtn`);
+  const likeBtn = document.querySelectorAll(`#show-${id}`);
   const likeCount = document.querySelector(`.likesCounter-${id}`);
-  if (likeBtn && likeCount) {
-    likeBtn.addEventListener('click', async () => {
-      likeCount.textContent = parseInt(likeCount.textContent, 10) + 1;
-      await postLikes({
-        item_id: id,
+  likeBtn.forEach((item) => {
+    if (item && likeCount) {
+      item.addEventListener('click', async () => {
+        likeCount.textContent = parseInt(likeCount.textContent, 10) + 1;
+        await postLikes({
+          item_id: id,
+        });
       });
-    });
-  }
+    }
+  });
 };
 export { displayLikes, likeItem };
