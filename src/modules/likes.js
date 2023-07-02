@@ -1,7 +1,5 @@
 import { baseUrl, likesId } from './api.js';
 
-export const involvementApiForLikes = `${baseUrl}/apps/${likesId}/likes`;
-
 const postLikes = async (data) => {
   await fetch(`${baseUrl}/apps/${likesId}/likes`, {
     method: 'POST',
