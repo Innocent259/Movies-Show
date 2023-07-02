@@ -1,8 +1,12 @@
 import like from '../assets/like.jpeg';
 import cancel from '../assets/xmark-solid.svg';
+import logo from '../assets/logo2.png';
 import getComment from './getComments.js';
 import postComment from './postComment.js';
 import { displayLikes, likeItem } from './likes.js';
+
+const logoImage = document.querySelector('.logo');
+logoImage.innerHTML = `<img src=${logo} class="logo-logo">`;
 
 const fetchMovies = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
