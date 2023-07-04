@@ -73,7 +73,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://innocent259.github.io/Javascript-capstone/dist/)
+- [Live Demo](https://innocent259.github.io/Javascript-capstone/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

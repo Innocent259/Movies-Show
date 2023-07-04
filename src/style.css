@@ -20,13 +20,15 @@ body {
 
 .logo-movie {
   display: flex;
-  gap: 4rem;
   align-items: center;
 }
 
-.img-logo {
-  height: 4rem;
-  width: 4rem;
+.logo {
+  width: 25%;
+}
+
+.logo-logo {
+  width: 100%;
 }
 
 .list-container {
@@ -38,6 +40,17 @@ body {
 
 li {
   list-style: none;
+}
+
+.type {
+  text-decoration: none;
+  color: #63b4f7;
+  font-size: 1rem;
+}
+
+.type:hover {
+  text-decoration: underline;
+  color: rgb(123, 11, 11);
 }
 
 .links {
