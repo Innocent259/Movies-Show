@@ -26,6 +26,7 @@ body {
 .logo {
   width: 25%;
 }
+
 .logo-logo {
   width: 100%;
 }
@@ -41,9 +42,9 @@ li {
   list-style: none;
 }
 
- .type {
+.type {
   text-decoration: none;
-  color: #63B4F7;
+  color: #63b4f7;
   font-size: 1rem;
 }
 
