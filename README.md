@@ -71,9 +71,9 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Demo <a name="live-demo"></a>
 
-- [Live Demo](https://innocent259.github.io/Javascript-capstone/dist/)
+- [Live Demo](https://innocent259.github.io/Movies-Show/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
